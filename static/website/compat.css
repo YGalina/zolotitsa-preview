@@ -1,0 +1,50 @@
+/* The offscreen announcement track must not enlarge the document. Keep the
+   visible part of the next slide inside the section's existing boundaries. */
+@media (max-width: 767px) {
+  .section-announcing { overflow-x: clip; }
+  .contact-main .rline {
+    width: 100vw;
+    margin-left: calc((100% - 100vw) / 2);
+  }
+}
+[data-backend-status] { line-height: 1.4; }
+.raccordion_content--without-images .raccordion_text { width: 100%; }
+
+/* Two editable media blocks share the existing first-screen layout. */
+.rmain-slider:has(.zolotitsa-hero-video) { position: relative; isolation: isolate; }
+.rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_carousel { visibility: hidden; }
+.zolotitsa-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.zolotitsa-hero-video.hero-9x16 { display: none; }
+.rmain-slider:has(.zolotitsa-hero-video)::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(48,55,63,.65), transparent 65%), linear-gradient(0deg, rgba(48,55,63,.65), transparent 55%); }
+.rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt { position: absolute; z-index: 2; background: transparent; }
+@media (max-width: 767px) {
+  .zolotitsa-hero-video.hero-16x9 { display: none; }
+  .zolotitsa-hero-video.hero-9x16 { display: block; }
+}
+.rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_arrow,
+.rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_dots { display: none; }
+/* The revised spa catalogue remains inside the existing dark section. */
+.zolotitsa-spa-catalog .simple_text { font-size: 16px; line-height: 1.6; }
+.zolotitsa-spa-catalog .simple_text p { margin: 0 0 12px; }
+.zolotitsa-spa-catalog .simple_text h3 { font-size: 21px; line-height: 1.35; margin: 28px 0 12px; color: #ffecba; }
+.zolotitsa-spa-catalog .slider_controls { display: none; }
+
+/* Match the common graphite used by the other dark site panels. */
+.footer_left, #cookie-notice { background-color: #30373f !important; }
+
+@media (max-width: 767px) {
+  .simple_text, .announcing_block_text { font-size: 16px; line-height: 1.5; }
+  .main_btn, .arrow_btn { font-size: 14px; line-height: 1.3; }
+}
+@media (max-width: 767px) {
+  .rmenu_logo-sttl { display: block; font-size: 8px; line-height: 1; white-space: nowrap; letter-spacing: 0; }
+}
+@media (max-width: 767px) {
+  .rmenu_logo-sttl br { display: inline; }
+}
+@media (max-width: 767px) {
+  .rmain-slider:has(.zolotitsa-hero-video) { height: 100vh; height: 100svh; margin-bottom: var(--hero-search-height, 500px); }
+  .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt { inset: 0; height: 100%; margin: 0; padding: 0 !important; }
+  .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt > .rcontainer { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .rmain-slider:has(.zolotitsa-hero-video) #block-search { position: absolute; top: 100%; left: 0; width: 100%; scroll-margin-top: 90px; }
+}
