@@ -51,3 +51,8 @@
 
 /* Keep the portrait lobby visualization fully visible inside the landscape slider. */
 .head_slide_img[src*="75828d4350dd868b"] { width:100%; height:100%; object-fit:contain; object-position:center; }
+@media (max-width: 767px) {
+  .section-article-description { overflow-x: clip; }
+  .service_head_sides .service_head_content { width: 100% !important; max-width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
+}
+@media (max-width: 767px) { html { overflow-x: clip; } }
