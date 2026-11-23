@@ -48,3 +48,6 @@
   .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt > .rcontainer { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .rmain-slider:has(.zolotitsa-hero-video) #block-search { position: absolute; top: 100%; left: 0; width: 100%; scroll-margin-top: 90px; }
 }
+
+/* Keep the portrait lobby visualization fully visible inside the landscape slider. */
+.head_slide_img[src*="75828d4350dd868b"] { width:100%; height:100%; object-fit:contain; object-position:center; }
