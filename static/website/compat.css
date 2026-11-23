@@ -56,3 +56,36 @@
   .service_head_sides .service_head_content { width: 100% !important; max-width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
 }
 @media (max-width: 767px) { html { overflow-x: clip; } }
+/* Give the room photographs a view of the room rather than the ceiling. */
+.features_block__image[data-background-image*="/media/blobs/"] { background-position: center 75% !important; }
+/* Keep decorative artwork clear of the text. */
+.about_content_side { padding-bottom: 140px; }
+/* One calm, light surface for the detailed spa catalogue. */
+.zolotitsa-spa-catalog { background: #f5f1e8; color: #30373f; }
+.zolotitsa-spa-catalog .main_title { color: #30373f; }
+.zolotitsa-spa-catalog .main_title_wrapper { max-width: 1120px; margin: 0 auto; text-align: left; }
+.zolotitsa-spa-catalog .simple_text { color: #30373f; text-align: left; }
+.zolotitsa-spa-catalog .simple_text > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 48px; }
+.zolotitsa-spa-catalog .spa-care-group { min-width: 0; }
+.zolotitsa-spa-catalog .simple_text h3 { color: #886725; margin: 18px 0; font-size: 20px; line-height: 1.3; }
+.zolotitsa-spa-catalog .simple_text p { margin: 0; padding: 12px 0; border-bottom: 1px solid #d9d1c2; line-height: 1.6; }
+.zolotitsa-spa-catalog a { color: #765a27; }
+/* Remove the unrelated dark slab behind the footer. */
+.footer-section::before { display: none; }
+@media (max-width: 767px) {
+  .about_content_side { padding-bottom: 100px; }
+  .zolotitsa-spa-catalog .simple_text > div { grid-template-columns: 1fr; gap: 12px; }
+  .zolotitsa-spa-catalog .simple_text h3 { font-size: 18px; }
+}
+/* An aligned, legible overview of the lodge facilities. */
+.section-why-we { background: #f5f1e8; color: #30373f; }
+.section-why-we .main_title, .section-why-we .why_we__title { color: #30373f; }
+.section-why-we .why_we_blocks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 48px; margin: 0; }
+.section-why-we .why_we_block { width: auto; margin: 0; padding: 0; min-width: 0; }
+.section-why-we .why_we__ico { display: none; }
+.section-why-we .why_we__head { border-bottom: 1px solid #d9d1c2; padding: 0 0 16px; margin: 0 0 16px; }
+.section-why-we .why_we__title { font-size: 24px; line-height: 1.25; }
+.section-why-we .why_we__body { color: #30373f; font-size: 16px; line-height: 1.65; }
+.footer_col .menu-item-object-spa { display: none; }
+@media (max-width: 767px) { .section-why-we .why_we_blocks { grid-template-columns: 1fr; gap: 24px; } }
+.placement_block__image[data-background-image*="/media/blobs/"] { background-position: center 78% !important; }

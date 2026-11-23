@@ -1,3 +1,6 @@
+
+/* Public static preview has no active booking service. */
+document.addEventListener('click',function(e){const a=e.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('tl-booking-open')||href.includes('#block-search')){e.preventDefault();e.stopImmediatePropagation();alert('Бронирование временно недоступно в тестовой версии. Модуль TravelLine ещё подключается.');}},true);
 /* Local backend only. Historic WordPress writes stay disabled. */
 document.addEventListener('submit', async event => {
   const form = event.target;
