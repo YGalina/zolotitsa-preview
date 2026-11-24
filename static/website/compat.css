@@ -15,7 +15,7 @@
 .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_carousel { visibility: hidden; }
 .zolotitsa-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .zolotitsa-hero-video.hero-9x16 { display: none; }
-.rmain-slider:has(.zolotitsa-hero-video)::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(48,55,63,.65), transparent 65%), linear-gradient(0deg, rgba(48,55,63,.65), transparent 55%); }
+.rmain-slider:has(.zolotitsa-hero-video)::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(48,55,63,.5) 0%, rgba(48,55,63,.32) 30%, rgba(48,55,63,.12) 55%, rgba(48,55,63,0) 75%), linear-gradient(0deg, rgba(48,55,63,.55) 0%, rgba(48,55,63,.2) 25%, rgba(48,55,63,0) 50%); }
 .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt { position: absolute; z-index: 2; background: transparent; }
 @media (max-width: 767px) {
   .zolotitsa-hero-video.hero-16x9 { display: none; }
@@ -23,19 +23,8 @@
 }
 .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_arrow,
 .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_dots { display: none; }
-/* The revised spa catalogue remains inside the existing dark section. */
-.zolotitsa-spa-catalog .simple_text { font-size: 16px; line-height: 1.6; }
-.zolotitsa-spa-catalog .simple_text p { margin: 0 0 12px; }
-.zolotitsa-spa-catalog .simple_text h3 { font-size: 21px; line-height: 1.35; margin: 28px 0 12px; color: #ffecba; }
-.zolotitsa-spa-catalog .slider_controls { display: none; }
 
-/* Match the common graphite used by the other dark site panels. */
-.footer_left, #cookie-notice { background-color: #30373f !important; }
 
-@media (max-width: 767px) {
-  .simple_text, .announcing_block_text { font-size: 16px; line-height: 1.5; }
-  .main_btn, .arrow_btn { font-size: 14px; line-height: 1.3; }
-}
 @media (max-width: 767px) {
   .rmenu_logo-sttl { display: block; font-size: 8px; line-height: 1; white-space: nowrap; letter-spacing: 0; }
 }
@@ -49,43 +38,23 @@
   .rmain-slider:has(.zolotitsa-hero-video) #block-search { position: absolute; top: 100%; left: 0; width: 100%; scroll-margin-top: 90px; }
 }
 
-/* Keep the portrait lobby visualization fully visible inside the landscape slider. */
-.head_slide_img[src*="75828d4350dd868b"] { width:100%; height:100%; object-fit:contain; object-position:center; }
 @media (max-width: 767px) {
   .section-article-description { overflow-x: clip; }
   .service_head_sides .service_head_content { width: 100% !important; max-width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
 }
-@media (max-width: 767px) { html { overflow-x: clip; } }
-/* Give the room photographs a view of the room rather than the ceiling. */
-.features_block__image[data-background-image*="/media/blobs/"] { background-position: center 75% !important; }
-/* Keep decorative artwork clear of the text. */
-.about_content_side { padding-bottom: 140px; }
-/* One calm, light surface for the detailed spa catalogue. */
-.zolotitsa-spa-catalog { background: #f5f1e8; color: #30373f; }
-.zolotitsa-spa-catalog .main_title { color: #30373f; }
-.zolotitsa-spa-catalog .main_title_wrapper { max-width: 1120px; margin: 0 auto; text-align: left; }
-.zolotitsa-spa-catalog .simple_text { color: #30373f; text-align: left; }
-.zolotitsa-spa-catalog .simple_text > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 48px; }
-.zolotitsa-spa-catalog .spa-care-group { min-width: 0; }
-.zolotitsa-spa-catalog .simple_text h3 { color: #886725; margin: 18px 0; font-size: 20px; line-height: 1.3; }
-.zolotitsa-spa-catalog .simple_text p { margin: 0; padding: 12px 0; border-bottom: 1px solid #d9d1c2; line-height: 1.6; }
-.zolotitsa-spa-catalog a { color: #765a27; }
-/* Remove the unrelated dark slab behind the footer. */
-.footer-section::before { display: none; }
-@media (max-width: 767px) {
-  .about_content_side { padding-bottom: 100px; }
-  .zolotitsa-spa-catalog .simple_text > div { grid-template-columns: 1fr; gap: 12px; }
-  .zolotitsa-spa-catalog .simple_text h3 { font-size: 18px; }
-}
-/* An aligned, legible overview of the lodge facilities. */
-.section-why-we { background: #f5f1e8; color: #30373f; }
-.section-why-we .main_title, .section-why-we .why_we__title { color: #30373f; }
-.section-why-we .why_we_blocks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 48px; margin: 0; }
-.section-why-we .why_we_block { width: auto; margin: 0; padding: 0; min-width: 0; }
-.section-why-we .why_we__ico { display: none; }
-.section-why-we .why_we__head { border-bottom: 1px solid #d9d1c2; padding: 0 0 16px; margin: 0 0 16px; }
-.section-why-we .why_we__title { font-size: 24px; line-height: 1.25; }
-.section-why-we .why_we__body { color: #30373f; font-size: 16px; line-height: 1.65; }
-.footer_col .menu-item-object-spa { display: none; }
-@media (max-width: 767px) { .section-why-we .why_we_blocks { grid-template-columns: 1fr; gap: 24px; } }
-.placement_block__image[data-background-image*="/media/blobs/"] { background-position: center 78% !important; }
+html { overflow-x: clip; }
+
+/* Photos: keep the subject of the frame (bed, furniture, floor), not the ceiling. */
+.descr_image_slide[data-background-image*="/media/blobs/"],
+.features_block__image[data-background-image*="/media/blobs/"],
+.placement_block__image[data-background-image*="/media/blobs/"] { background-position: center 70% !important; }
+
+/* Footer: the full logo (seal + signature) instead of the seal alone. */
+.zl-footer-logo-txt { display: block; margin-top: 12px; text-align: center; color: #fff; }
+.zl-footer-logo-ttl { display: block; font-family: 'TenorSans'; font-size: 18px; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; }
+.zl-footer-logo-sttl { display: block; margin-top: 6px; font-size: 10px; line-height: 1.35; color: #b9b5b0; text-transform: uppercase; letter-spacing: .06em; }
+.footer_logo-wr:has(.zl-footer-logo-txt) { width: auto; display: flex; flex-direction: column; align-items: center; }
+.footer_logo-wr:has(.zl-footer-logo-txt) img { width: 97px; }
+
+/* Lobby: the album has only portrait frames; show the sofa-and-fireplace band, not the ceiling. */
+.head_slide_img[src*="75828d4350dd868b"], .head_slide_img[data-src*="75828d4350dd868b"] { width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
