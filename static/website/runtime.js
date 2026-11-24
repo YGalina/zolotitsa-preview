@@ -8,6 +8,11 @@ document.addEventListener('submit', async event => {
   if (!form.matches('[data-backend-form]')) return;
   event.preventDefault();
   event.stopImmediatePropagation();
+  /* Static preview: no backend, nothing leaves the browser. */
+  if (location.hostname.endsWith('github.io') || !document.querySelector('meta[name="csrf-token"]')) {
+    if (window.zlNote) window.zlNote('form');
+    return;
+  }
   if (form.dataset.sending === 'true') return;
   form.dataset.sending = 'true';
   const values = {};
