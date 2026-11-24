@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     frame.addEventListener('load', resize);
     window.addEventListener('resize', resize);
     widget.addEventListener('click', () => {
-      window.alert(widget.dataset.bookingAppearance === 'en'
-        ? 'Online booking is not connected in this local copy.'
-        : 'Онлайн-бронирование в локальной копии пока не подключено.');
+      if (window.zlNote) window.zlNote();
     });
   }
   function closeMenu() {

@@ -1,6 +1,7 @@
+window.zlNote=function(kind){let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?(kind==='form'?'Online requests will open soon. Please call ':'Online booking will be available after the booking system is connected. Call ')+'<a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':(kind==='form'?'Отправка заявок с сайта появится скоро. Пока – по&nbsp;телефону ':'Онлайн-бронирование появится после подключения системы. Пока – по&nbsp;телефону ')+'<a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>';n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},6000);};
 
 /* Public static preview has no active booking service. */
-document.addEventListener('click',function(e){const a=e.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('tl-booking-open')||href.includes('#block-search')){e.preventDefault();e.stopImmediatePropagation();let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?'Online booking will be available after the booking system is connected. Call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':'Онлайн-бронирование появится после подключения системы. Пока – по&nbsp;телефону <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>';n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},6000);}},true);
+document.addEventListener('click',function(e){const a=e.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('tl-booking-open')||href.includes('#block-search')){e.preventDefault();e.stopImmediatePropagation();window.zlNote();}},true);
 /* Local backend only. Historic WordPress writes stay disabled. */
 document.addEventListener('submit', async event => {
   const form = event.target;
@@ -53,7 +54,7 @@ document.addEventListener('click', event => {
 document.addEventListener('DOMContentLoaded', () => {
   const notice = document.querySelector('#cookie-notice');
   if (!notice) return;
-  if (location.pathname.startsWith('/en/')) {
+  if (location.pathname.includes('/en/')) {
     const message = notice.querySelector('#cn-notice-text');
     const button = notice.querySelector('#cn-accept-cookie');
     const close = notice.querySelector('#cn-close-notice');
