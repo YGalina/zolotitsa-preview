@@ -1,4 +1,4 @@
-window.zlNote=function(kind){let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?(kind==='form'?'Online requests will open soon. Please call ':'Online booking will be available after the booking system is connected. Call ')+'<a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':(kind==='form'?'Отправка заявок с сайта появится скоро. Пока – по&nbsp;телефону ':'Онлайн-бронирование появится после подключения системы. Пока – по&nbsp;телефону ')+'<a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>';n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},6000);};
+window.zlNote=function(kind){let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?(kind==='form'?'Online requests will open soon. Please call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':'To book, call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> or message us on <a href="https://wa.me/79210854655" target="_blank" rel="noopener" style="color:#c38f41">WhatsApp</a>'):(kind==='form'?'Отправка заявок с сайта появится скоро. Пока – по&nbsp;телефону <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':'Забронировать: <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> или в&nbsp;<a href="https://wa.me/79210854655" target="_blank" rel="noopener" style="color:#c38f41">WhatsApp</a>');n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},10000);};
 
 /* Public static preview has no active booking service. */
 document.addEventListener('click',function(e){const a=e.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('tl-booking-open')||href.includes('#block-search')){e.preventDefault();e.stopImmediatePropagation();window.zlNote();}},true);
@@ -113,3 +113,71 @@ document.addEventListener('DOMContentLoaded', () => {
   reduced.addEventListener('change', updateHero);
   updateHero();
 });
+
+/* Prices (open) and presentations (after contacts) — #zl-docs. Booking buttons — phone/WhatsApp note (#zl-book). */
+(function(){
+  const EN = location.pathname.includes('/en/');
+  const D = '/zolotitsa-preview/media/docs/';
+  const T = EN ? {
+    ttl:'Prices and presentations', prices:'Prices 2027 (PDF, in Russian)', pres:'Lodge presentations (PDF, in Russian)',
+    lead:'Leave your contact details and the presentations will open right away.', name:'Your name *', phone:'Phone *', email:'Email',
+    agree:'I agree to the processing of my personal data and accept the <a href="/zolotitsa-preview/en/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>',
+    btn:'Get presentations', err:'Please fill in your name, phone and tick the consent box.', done:'Thank you! The presentations are ready to download:', close:'Close',
+    p:[['price-2027-accommodation.pdf','Accommodation and meals','1.7 MB'],['price-2027-spa.pdf','SPA and bath complex','3.4 MB'],['price-2027-services.pdf','Additional services','0.4 MB']],
+    r:[['presentation-general.pdf','About the lodge','10 MB'],['presentation-rooms.pdf','Rooms and facilities','9 MB'],['presentation-spa.pdf','SPA catalogue','8 MB']]
+  } : {
+    ttl:'Цены и презентации', prices:'Цены 2027 (PDF)', pres:'Презентации лоджа (PDF)',
+    lead:'Оставьте контакты – и презентации откроются сразу.', name:'Ваше имя *', phone:'Телефон *', email:'Email',
+    agree:'Даю <a href="/zolotitsa-preview/politika-konfidenczialnosti/#soglasie" target="_blank" rel="noopener">согласие</a> на обработку персональных данных и принимаю <a href="/zolotitsa-preview/politika-konfidenczialnosti/" target="_blank" rel="noopener">политику</a>',
+    btn:'Получить презентации', err:'Заполните имя, телефон и отметьте согласие.', done:'Спасибо! Презентации готовы к скачиванию:', close:'Закрыть',
+    p:[['price-2027-accommodation.pdf','Проживание и питание','1,7 МБ'],['price-2027-spa.pdf','СПА и баня','3,4 МБ'],['price-2027-services.pdf','Дополнительные услуги','0,4 МБ']],
+    r:[['presentation-general.pdf','О лодже','10 МБ'],['presentation-rooms.pdf','Номера и инфраструктура','9 МБ'],['presentation-spa.pdf','СПА-каталог','8 МБ']]
+  };
+  const list = a => '<ul class="zl-docs__list">' + a.map(([f,t,s]) => `<li><a href="${D}${f}" target="_blank" rel="noopener">${t}</a><span>${s}</span></li>`).join('') + '</ul>';
+  let box;
+  function open(){
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'zl-docs'; box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true'); box.setAttribute('aria-label',T.ttl);
+      box.innerHTML = `<div class="zl-docs__panel"><button type="button" class="zl-docs__x" aria-label="${T.close}">×</button>
+        <div class="zl-docs__ttl">${T.ttl}</div>
+        <div class="zl-docs__h">${T.prices}</div>${list(T.p)}
+        <div class="zl-docs__h">${T.pres}</div>
+        <form class="zl-docs__form" novalidate><p>${T.lead}</p>
+          <input name="your-name" autocomplete="name" placeholder="${T.name}" required>
+          <input name="tel" type="tel" autocomplete="tel" placeholder="${T.phone}" required>
+          <input name="your-email" type="email" autocomplete="email" placeholder="${T.email}">
+          <label class="zl-docs__agree"><input type="checkbox" name="acceptance" required> <span>${T.agree}</span></label>
+          <p class="zl-docs__err" role="alert" hidden>${T.err}</p>
+          <button type="submit" class="zl-book-cta__btn">${T.btn}</button></form>
+        <div class="zl-docs__ok" hidden><p>${T.done}</p>${list(T.r)}</div></div>`;
+      document.body.append(box);
+      box.addEventListener('click', e => { if (e.target === box || e.target.closest('.zl-docs__x')) close(); });
+      const form = box.querySelector('form');
+      form.addEventListener('submit', async e => {
+        e.preventDefault(); e.stopImmediatePropagation();
+        const v = Object.fromEntries(new FormData(form));
+        const ok = (v['your-name']||'').trim() && (v.tel||'').replace(/\D/g,'').length >= 7 && v.acceptance;
+        form.querySelector('.zl-docs__err').hidden = !!ok;
+        if (!ok) return;
+        const csrf = document.querySelector('meta[name="csrf-token"]');
+        if (!location.hostname.endsWith('github.io') && csrf) {
+          try { await fetch('/api/submissions/', {method:'POST', credentials:'same-origin',
+            headers:{'Content-Type':'application/json','X-CSRFToken':csrf.content},
+            body: JSON.stringify({form_id:'presentation-request', page_path: location.pathname, idempotency_key: crypto.randomUUID(), fields: v})}); } catch (_) {}
+        }
+        form.hidden = true; box.querySelector('.zl-docs__ok').hidden = false;
+      }, true);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && box.classList.contains('is-open')) close(); });
+    }
+    box.classList.add('is-open'); document.body.classList.add('zl-docs-open');
+    box.querySelector('.zl-docs__x').focus();
+  }
+  function close(){ box.classList.remove('is-open'); document.body.classList.remove('zl-docs-open'); }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href$="#zl-docs"],a[href$="#zl-prices"],a[href$="#zl-book"]');
+    if (!a) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    if (a.getAttribute('href').endsWith('#zl-book')) { if (window.zlNote) window.zlNote(); } else open();
+  }, true);
+})();
