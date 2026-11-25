@@ -102,4 +102,13 @@ body.zl-docs-open{overflow:hidden}
 .zl-docs__agree a{color:#c38f41!important}
 .zl-docs__err{color:#ffb4a0;font-size:12px}
 .zl-docs__form .zl-book-cta__btn{justify-content:center;border:0;cursor:pointer;margin-top:6px}
-.placement_blocks{justify-content:center}
+/* Room categories slider (About page) */
+.zl-place__track{flex-wrap:nowrap!important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.zl-place__track::-webkit-scrollbar{display:none}
+.zl-place__track>*{flex:0 0 calc(33.333% - 3rem);scroll-snap-align:start}
+@media (max-width:991px){.zl-place__track>*{flex-basis:calc(50% - 2rem)}}
+@media (max-width:600px){.zl-place__track>*{flex-basis:85%}}
+.zl-place__ctl{justify-content:center;margin-top:3rem}
+.zl-place__btn{cursor:pointer}
+.zl-place__btn[disabled]{opacity:.35;cursor:default}
+.head_slide_img[src*="75828d43"],.head_slide_img[data-src*="75828d43"]{width:100%;height:100%;object-fit:cover;object-position:center 60%}

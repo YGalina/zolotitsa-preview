@@ -181,3 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (a.getAttribute('href').endsWith('#zl-book')) { if (window.zlNote) window.zlNote(); } else open();
   }, true);
 })();
+
+/* Room categories slider: arrows scroll the track by one card. */
+document.addEventListener('DOMContentLoaded', () => {
+  for (const box of document.querySelectorAll('.zl-place')) {
+    const track = box.querySelector('.zl-place__track');
+    const [prev, next] = box.querySelectorAll('.zl-place__btn');
+    const step = () => { const c = track.children[0]; return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(c).marginLeft) * 2 : track.clientWidth; };
+    const update = () => { prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2; };
+    prev.addEventListener('click', () => track.scrollBy({left: -step(), behavior: 'smooth'}));
+    next.addEventListener('click', () => track.scrollBy({left: step(), behavior: 'smooth'}));
+    track.addEventListener('scroll', update, {passive: true});
+    window.addEventListener('resize', update);
+    update();
+  }
+});
