@@ -126,3 +126,5 @@ h1.rmain-slider_subtitle{max-width:none}
 @media (max-width:767px){.zl-hero-forbes{flex-direction:column;gap:6px;font-size:12px;max-width:300px;text-align:center;margin-top:14px}.zl-hero-forbes img{width:64px}}
 @media (min-width:768px){.zl-hero-forbes{margin-bottom:32px}}
 @media (max-width:767px){.zl-hero-lead{max-width:340px;padding:0 16px}}
+/* 26.11: шапка услуг (СПА, ресторан и др.) помещается в экран ноутбука – фото по высоте окна, меньше отступ сверху */
+@media (min-width:1025px){.section-head{padding-top:5rem}.head_service_image_wrapper.descr_image_wrapper .head_descr_image_slider img{height:calc(100vh - 330px);min-height:420px;max-height:736px;width:100%;object-fit:cover}.service_head_content .column_betwean_top{padding-top:0;padding-bottom:3rem}}
