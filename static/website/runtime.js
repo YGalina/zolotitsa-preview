@@ -76,8 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       try {localStorage.setItem('zolotitsa-cookie-choice', button.id === 'cn-accept-cookie' ? 'accepted' : 'dismissed');} catch (_) {}
       notice.style.display = 'none';
+      syncCookieHeight();
     });
   }
+  // 26.11: пока плашка cookie видна, первый экран поднимается на её высоту – плашка не закрывает кнопки и заголовок
+  function syncCookieHeight() {
+    const h = notice.style.display === 'none' ? 0 : Math.ceil(notice.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--zl-cookie-h', h + 'px');
+  }
+  syncCookieHeight();
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(syncCookieHeight).observe(notice);
+  window.addEventListener('resize', syncCookieHeight);
   // Analytics and chat integrations are not enabled by this compatibility code.
 });
 
