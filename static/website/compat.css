@@ -175,3 +175,11 @@ h1.rmain-slider_subtitle{max-width:none}
 @media (min-width:768px){
   .rmain-slider:has(.zolotitsa-hero-video) .zl-book-cta{background:transparent}
 }
+
+
+
+
+
+
+/* подвал: логотип точно как в шапке – нерпа и название в одну строку */
+.footer_logo-wr{width:auto!important}
