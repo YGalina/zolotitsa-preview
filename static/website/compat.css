@@ -112,3 +112,17 @@ body.zl-docs-open{overflow:hidden}
 .zl-place__btn{cursor:pointer}
 .zl-place__btn[disabled]{opacity:.35;cursor:default}
 .head_slide_img[src*="75828d43"],.head_slide_img[data-src*="75828d43"]{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+
+/* Первый экран 26.11: заголовок-h1, подводка, ролик «море, лес, озёра» */
+h1.rmain-slider_subtitle{color:#fff;font-weight:400}
+.rmain-slider_title{letter-spacing:.04em}
+.zl-hero-lead{max-width:640px;margin:0 auto;color:rgba(255,255,255,.92);font-family:Montserrat-Regular,Montserrat,sans-serif;font-size:18px;line-height:1.5;text-align:center;text-shadow:0 1px 12px rgba(48,55,63,.45)}
+@media (max-width:767px){.zl-hero-lead{font-size:14px;max-width:320px;padding:0 8px}}
+h1.rmain-slider_subtitle{max-width:none}
+.zl-br{display:block}
+.zl-hero-lead{max-width:700px}
+.zl-hero-forbes{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 0;color:rgba(255,255,255,.85);font-family:Montserrat-Regular,Montserrat,sans-serif;font-size:13px;letter-spacing:.04em;text-shadow:0 1px 10px rgba(48,55,63,.5)}
+.zl-hero-forbes img{display:block;width:80px;height:auto;opacity:.95}
+@media (max-width:767px){.zl-hero-forbes{flex-direction:column;gap:6px;font-size:12px;max-width:300px;text-align:center;margin-top:14px}.zl-hero-forbes img{width:64px}}
+@media (min-width:768px){.zl-hero-forbes{margin-bottom:32px}}
+@media (max-width:767px){.zl-hero-lead{max-width:340px;padding:0 16px}}
