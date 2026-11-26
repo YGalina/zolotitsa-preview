@@ -1,4 +1,4 @@
-window.zlNote=function(kind){let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?(kind==='form'?'Online requests will open soon. Please call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':'To book, call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> or message us on <a href="https://wa.me/79210854655" target="_blank" rel="noopener" style="color:#c38f41">WhatsApp</a>'):(kind==='form'?'Отправка заявок с сайта появится скоро. Пока – по&nbsp;телефону <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a>':'Забронировать: <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> или в&nbsp;<a href="https://wa.me/79210854655" target="_blank" rel="noopener" style="color:#c38f41">WhatsApp</a>');n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},10000);};
+window.zlNote=function(kind){let n=document.getElementById('zl-booking-note');if(!n){n=document.createElement('div');n.id='zl-booking-note';n.setAttribute('role','status');n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483000;max-width:min(560px,calc(100vw - 32px));padding:16px 24px;background:#30373f;color:#fff;border:1px solid rgba(195,143,65,.6);border-radius:40px;font:14px/1.45 Montserrat-Medium,sans-serif;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35)';document.body.append(n);}n.innerHTML=location.pathname.includes('/en/')?(kind==='form'?'Message us on <a href="https://t.me/zoloticahotel" target="_blank" rel="noopener" style="color:#c38f41">Telegram @zoloticahotel</a> or call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> – we will reply with dates and prices.':'To book, call <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> or message us on <a href="https://t.me/zoloticahotel" target="_blank" rel="noopener" style="color:#c38f41">Telegram</a>'):(kind==='form'?'Напишите нам в&nbsp;<a href="https://t.me/zoloticahotel" target="_blank" rel="noopener" style="color:#c38f41">Telegram @zoloticahotel</a> или позвоните <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> – ответим с&nbsp;датами и&nbsp;ценами.':'Забронировать: <a href="tel:+79210854655" style="color:#c38f41">+7&nbsp;(921)&nbsp;085-46-55</a> или в&nbsp;<a href="https://t.me/zoloticahotel" target="_blank" rel="noopener" style="color:#c38f41">Telegram</a>');n.hidden=false;clearTimeout(n._t);n._t=setTimeout(()=>{n.hidden=true},10000);};
 
 /* Public static preview has no active booking service. */
 document.addEventListener('click',function(e){const a=e.target.closest('a[href]');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('tl-booking-open')||href.includes('#block-search')){e.preventDefault();e.stopImmediatePropagation();window.zlNote();}},true);
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHero();
 });
 
-/* Prices (open) and presentations (after contacts) — #zl-docs. Booking buttons — phone/WhatsApp note (#zl-book). */
+/* Prices (open) and presentations (after contacts) — #zl-docs. Booking buttons — phone/Telegram note (#zl-book). */
 (function(){
   const EN = location.pathname.includes('/en/');
   const D = '/zolotitsa-preview/media/docs/';
@@ -123,15 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
     lead:'Leave your contact details and the presentations will open right away.', name:'Your name *', phone:'Phone *', email:'Email',
     agree:'I agree to the processing of my personal data and accept the <a href="/zolotitsa-preview/en/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>',
     btn:'Get presentations', err:'Please fill in your name, phone and tick the consent box.', done:'Thank you! The presentations are ready to download:', close:'Close',
-    p:[['price-2027-accommodation.pdf','Accommodation and meals','1.7 MB'],['price-2027-spa.pdf','SPA and bath complex','3.4 MB'],['price-2027-services.pdf','Additional services','0.4 MB']],
-    r:[['presentation-general.pdf','About the lodge','10 MB'],['presentation-rooms.pdf','Rooms and facilities','9 MB'],['presentation-spa.pdf','SPA catalogue','8 MB']]
+    p:[['price-2027-accommodation-services.pdf','Accommodation, meals and additional services','1.8 MB']],
+    r:[['presentation-general.pdf','About the lodge','10 MB'],['presentation-rooms.pdf','Rooms and facilities','9 MB']]
   } : {
     ttl:'Цены и презентации', prices:'Цены 2027 (PDF)', pres:'Презентации лоджа (PDF)',
     lead:'Оставьте контакты – и презентации откроются сразу.', name:'Ваше имя *', phone:'Телефон *', email:'Email',
     agree:'Даю <a href="/zolotitsa-preview/politika-konfidenczialnosti/#soglasie" target="_blank" rel="noopener">согласие</a> на обработку персональных данных и принимаю <a href="/zolotitsa-preview/politika-konfidenczialnosti/" target="_blank" rel="noopener">политику</a>',
     btn:'Получить презентации', err:'Заполните имя, телефон и отметьте согласие.', done:'Спасибо! Презентации готовы к скачиванию:', close:'Закрыть',
-    p:[['price-2027-accommodation.pdf','Проживание и питание','1,7 МБ'],['price-2027-spa.pdf','СПА и баня','3,4 МБ'],['price-2027-services.pdf','Дополнительные услуги','0,4 МБ']],
-    r:[['presentation-general.pdf','О лодже','10 МБ'],['presentation-rooms.pdf','Номера и инфраструктура','9 МБ'],['presentation-spa.pdf','СПА-каталог','8 МБ']]
+    p:[['price-2027-accommodation-services.pdf','Проживание, питание и дополнительные услуги','1,8 МБ']],
+    r:[['presentation-general.pdf','О лодже','10 МБ'],['presentation-rooms.pdf','Номера и инфраструктура','9 МБ']]
   };
   const list = a => '<ul class="zl-docs__list">' + a.map(([f,t,s]) => `<li><a href="${D}${f}" target="_blank" rel="noopener">${t}</a><span>${s}</span></li>`).join('') + '</ul>';
   let box;

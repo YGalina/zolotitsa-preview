@@ -133,3 +133,6 @@ h1.rmain-slider_subtitle{max-width:none}
 .rmain-slider:has(.zolotitsa-hero-video)::after{background:radial-gradient(ellipse 60% 42% at 50% 72%,rgba(48,55,63,.55) 0%,rgba(48,55,63,.28) 55%,rgba(48,55,63,0) 100%),linear-gradient(90deg,rgba(48,55,63,.5) 0%,rgba(48,55,63,.32) 30%,rgba(48,55,63,.12) 55%,rgba(48,55,63,0) 75%),linear-gradient(0deg,rgba(48,55,63,.55) 0%,rgba(48,55,63,.2) 25%,rgba(48,55,63,0) 50%)}
 @media (max-width:767px){.rmain-slider:has(.zolotitsa-hero-video)::after{background:radial-gradient(ellipse 90% 40% at 50% 55%,rgba(48,55,63,.55) 0%,rgba(48,55,63,.25) 60%,rgba(48,55,63,0) 100%),linear-gradient(0deg,rgba(48,55,63,.55) 0%,rgba(48,55,63,.2) 25%,rgba(48,55,63,0) 50%)}}
 @media (max-width:767px){h1.rmain-slider_subtitle{font-size:28px;line-height:30px;max-width:350px}}
+
+/* превью без сервера фильтров */
+.zl-static .rfilter,.zl-static .open-filter{display:none!important}.zl-static .rprograms_loop{width:100%;border-left:0;border-right:0}

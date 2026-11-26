@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ZL_STATIC: на превью нет сервера фильтров – показываем полный список программ без фильтра
+  if (!/(^|\.)zolotitsa\.(ru|com)$/.test(location.hostname)) { document.body.classList.add('zl-static'); return; }
   const form = document.querySelector('.rfilter_form');
   const loop = document.querySelector('.rprograms_loop');
   if (!form || !loop) return;
