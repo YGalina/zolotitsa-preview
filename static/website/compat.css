@@ -26,12 +26,6 @@
 
 
 @media (max-width: 767px) {
-  .rmenu_logo-sttl { display: block; font-size: 8px; line-height: 1; white-space: nowrap; letter-spacing: 0; }
-}
-@media (max-width: 767px) {
-  .rmenu_logo-sttl br { display: inline; }
-}
-@media (max-width: 767px) {
   .rmain-slider:has(.zolotitsa-hero-video) { height: 100vh; height: 100svh; margin-bottom: var(--hero-search-height, 500px); }
   .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt { inset: 0; height: 100%; margin: 0; padding: 0 !important; }
   .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt > .rcontainer { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -51,11 +45,6 @@ html { overflow-x: clip; }
 .placement_block__image[data-background-image*="/media/blobs/"] { background-position: center 85% !important; }
 
 /* Footer: the full logo (seal + signature) instead of the seal alone. */
-.zl-footer-logo-txt { display: block; margin-top: 12px; text-align: center; color: #fff; }
-.zl-footer-logo-ttl { display: block; font-family: 'TenorSans'; font-size: 18px; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; }
-.zl-footer-logo-sttl { display: block; margin-top: 6px; font-size: 10px; line-height: 1.35; color: #b9b5b0; text-transform: uppercase; letter-spacing: .06em; }
-.footer_logo-wr:has(.zl-footer-logo-txt) { width: auto; display: flex; flex-direction: column; align-items: center; }
-.footer_logo-wr:has(.zl-footer-logo-txt) img { width: 97px; }
 
 /* Lobby (album frame m-019): armchairs, double-height windows and floor. */
 .head_slide_img[src*="main-019"], .head_slide_img[data-src*="main-019"] { width: 100%; height: 100%; object-fit: cover; object-position: center 80%; }
