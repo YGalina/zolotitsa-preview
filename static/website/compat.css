@@ -168,3 +168,21 @@ h1.rmain-slider_subtitle{max-width:none}
   .rmain-slider:has(.zolotitsa-hero-video)::after{background:linear-gradient(180deg,rgba(30,35,41,.6) 0%,rgba(30,35,41,.5) 25%,rgba(30,35,41,.58) 50%,rgba(30,35,41,.68) 72%,rgba(30,35,41,.92) 100%)!important}
   .rmain-slider:has(.zolotitsa-hero-video) .zl-hero-lead{font-family:Montserrat-Medium,sans-serif}
 }
+/* 27.11: мелкий текст первого экрана крупнее и плотнее */
+.rmain-slider:has(.zolotitsa-hero-video) .zl-hero-lead{font-family:Montserrat-Medium,sans-serif;font-size:19px;line-height:1.5;letter-spacing:.01em}
+.rmain-slider:has(.zolotitsa-hero-video) .zl-hero-forbes span{font-family:Montserrat-Medium,sans-serif;font-size:16px;letter-spacing:.02em}
+.rmain-slider:has(.zolotitsa-hero-video) .zl-hero-forbes img{height:26px;width:auto}
+.zl-book-cta__btn{font-size:14px;letter-spacing:.06em}
+@media (max-width:767px){
+  .rmain-slider:has(.zolotitsa-hero-video) .zl-hero-lead{font-size:16px;line-height:1.45}
+  .rmain-slider:has(.zolotitsa-hero-video) .zl-hero-forbes span{font-size:14px}
+  .rmain-slider:has(.zolotitsa-hero-video) .zl-hero-forbes img{height:22px}
+  .zl-book-cta__btn{font-size:13px;padding:0 20px}
+}
+@media (max-width:767px) and (max-height:700px){
+  .rmain-slider:has(.zolotitsa-hero-video) .zl-hero-lead{font-size:14px;line-height:1.4}
+}
+/* планшет: полоса кнопок на всю ширину, без тёмной коробки */
+@media (min-width:768px){
+  .rmain-slider:has(.zolotitsa-hero-video) .zl-book-cta{background:transparent}
+}
