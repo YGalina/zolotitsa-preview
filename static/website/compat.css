@@ -222,7 +222,7 @@ h1.rmain-slider_subtitle{max-width:none}
 /* длинные слова в заголовках («ЭКОЛОГИЧЕСКИЕ») не вылезают за экран телефона */
 @media (max-width:480px){.main_title h2,.main_title h3{font-size:min(40px,9vw)!important;line-height:1.15!important}}
 /* основной текст страниц на телефоне – 14 px, а не 11,2 px */
-@media (max-width:1279px){.simple_text p,.simple_text li,.simple_text p a,.simple_text p strong,.simple_text li a{font-size:14px!important;line-height:1.5!important}}
+@media (max-width:1365px){.simple_text p,.simple_text li,.simple_text p a,.simple_text p strong,.simple_text li a{font-size:14px!important;line-height:1.5!important}}
 /* планшет 768–1024: шапка услуг (ресторан, СПА) – текст не шире колонки, «ПОМОРСКОЙ» не вылезает */
 .service_head_sides .service_head_content{min-width:0}
 @media (min-width:768px) and (max-width:1024px){.service_head_content h1{font-size:min(56px,6.5vw)!important;line-height:1.1!important}}
