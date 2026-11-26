@@ -128,3 +128,7 @@ h1.rmain-slider_subtitle{max-width:none}
 @media (max-width:767px){.zl-hero-lead{max-width:340px;padding:0 16px}}
 /* 26.11: шапка услуг (СПА, ресторан и др.) помещается в экран ноутбука – фото по высоте окна, меньше отступ сверху */
 @media (min-width:1025px){.section-head{padding-top:5rem}.head_service_image_wrapper.descr_image_wrapper .head_descr_image_slider img{height:calc(100vh - 330px);min-height:420px;max-height:736px;width:100%;object-fit:cover}.service_head_content .column_betwean_top{padding-top:0;padding-bottom:3rem}}
+.zl-stars{white-space:nowrap;color:inherit}.zl-stars i{font-style:normal;color:#c38f41;font-family:Arial,sans-serif;font-size:1.05em;margin-left:.08em;line-height:1}
+/* 26.11: текст читается на светлых кадрах (ягель, небо) – мягкое затемнение за текстом, без плашки */
+.rmain-slider:has(.zolotitsa-hero-video)::after{background:radial-gradient(ellipse 60% 42% at 50% 72%,rgba(48,55,63,.55) 0%,rgba(48,55,63,.28) 55%,rgba(48,55,63,0) 100%),linear-gradient(90deg,rgba(48,55,63,.5) 0%,rgba(48,55,63,.32) 30%,rgba(48,55,63,.12) 55%,rgba(48,55,63,0) 75%),linear-gradient(0deg,rgba(48,55,63,.55) 0%,rgba(48,55,63,.2) 25%,rgba(48,55,63,0) 50%)}
+@media (max-width:767px){.rmain-slider:has(.zolotitsa-hero-video)::after{background:radial-gradient(ellipse 90% 40% at 50% 55%,rgba(48,55,63,.55) 0%,rgba(48,55,63,.25) 60%,rgba(48,55,63,0) 100%),linear-gradient(0deg,rgba(48,55,63,.55) 0%,rgba(48,55,63,.2) 25%,rgba(48,55,63,0) 50%)}}
