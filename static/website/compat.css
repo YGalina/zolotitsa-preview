@@ -192,10 +192,10 @@ h1.rmain-slider_subtitle{max-width:none}
   #cookie-notice .cookie-notice-container{display:flex;align-items:center;justify-content:center;gap:16px;text-align:left}
   #cookie-notice #cn-notice-buttons{flex:none}
   #cookie-notice .cn-button{margin:0!important}
-  .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt{bottom:var(--zl-cookie-h,0px)!important;top:auto!important;transition:bottom .25s}
+  .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt{bottom:var(--zl-cookie-h,0px)!important;top:auto!important}
 }
 @media (max-width:767px){
-  .rmain-slider:has(.zolotitsa-hero-video) #block-search{bottom:var(--zl-cookie-h,0px)!important;transition:bottom .25s}
+  .rmain-slider:has(.zolotitsa-hero-video) #block-search{bottom:var(--zl-cookie-h,0px)!important}
   .rmain-slider:has(.zolotitsa-hero-video) .rmain-slider_cnt>.rcontainer{padding-bottom:calc(var(--hero-search-height,124px) + var(--zl-cookie-h,0px))}
 }
 /* 26.11: телефон горизонтально – первый экран целиком в окне высотой 360–430 px */
@@ -214,3 +214,12 @@ h1.rmain-slider_subtitle{max-width:none}
 }
 /* 26.11: подписи и кнопки не мельче 12 px (было 9,8–10,5 px) */
 .arrow_btn span,.date_block span,.main_btn_inner,.main_btn_inner span,.mfv_checker_text,.mfv_checker_text a,.wpcf7-list-item-label,.wpcf7-list-item-label a{font-size:12px!important}
+
+/* 26.11 ночь: прогон на 15 экранах */
+/* первый экран выше соседних блоков: декоративный узор анонсов не перекрывает кнопки (EN, 1366×768) */
+.rmain-slider:has(.zolotitsa-hero-video){z-index:3}
+.announcing_decor,.section_bg img{pointer-events:none}
+/* длинные слова в заголовках («ЭКОЛОГИЧЕСКИЕ») не вылезают за экран телефона */
+@media (max-width:480px){.main_title h2,.main_title h3{font-size:min(40px,9vw)!important;line-height:1.15!important}}
+/* основной текст страниц на телефоне – 14 px, а не 11,2 px */
+@media (max-width:767px){.simple_text p,.simple_text li,.simple_text p a,.simple_text p strong,.simple_text li a{font-size:14px!important;line-height:1.5!important}}
