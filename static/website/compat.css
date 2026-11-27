@@ -258,3 +258,8 @@ footer .footer_left .b_phone{white-space:nowrap}
 .zl-nowrap,a[href^="tel:"]{white-space:nowrap}
 /* 27.11: заголовки страниц на телефоне – длинное слово («ПОМОРСКОЙ» на «Ресторане») не выходит за экран */
 @media (max-width:480px){.main_title h1{font-size:min(56px,11.5vw)!important;line-height:1.1!important}}
+/* 27.11: заголовок программы на узком телефоне – «НОВОРОЖДЁННЫМ» выходил за экран на 360 px */
+@media (max-width:480px){h1.h1{font-size:min(32px,8vw)!important}}
+/* 27.11: телефоны – длинные слова в заголовках («окрестностям», «Этнографический») не выходят за экран; длинный адрес или слово в тексте переносится */
+@media (max-width:480px){.main_title h1{font-size:min(56px,10vw)!important;hyphens:auto;-webkit-hyphens:auto}h1.h1{font-size:min(32px,7.6vw)!important;hyphens:auto;-webkit-hyphens:auto}}
+p,li{overflow-wrap:break-word}
