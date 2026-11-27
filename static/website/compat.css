@@ -263,3 +263,5 @@ footer .footer_left .b_phone{white-space:nowrap}
 /* 27.11: телефоны – длинные слова в заголовках («окрестностям», «Этнографический») не выходят за экран; длинный адрес или слово в тексте переносится */
 @media (max-width:480px){.main_title h1{font-size:min(56px,10vw)!important;hyphens:auto;-webkit-hyphens:auto}h1.h1{font-size:min(32px,7.6vw)!important;hyphens:auto;-webkit-hyphens:auto}}
 p,li{overflow-wrap:break-word}
+/* 27.11: карточки номеров – «Двухкомнатный» не помещалось рядом с «Подробнее» и налезало на кнопку; во всех карточках название сверху, кнопка под ним */
+.placement_block__body{flex-direction:column;align-items:flex-start;row-gap:12px}
