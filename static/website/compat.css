@@ -246,3 +246,9 @@ footer .footer_left .b_phone{white-space:nowrap}
 /* 27.11: карточки номеров – название вплотную к «Подробнее» («Джуниор сюит», «Двухкомнатный люкс») */
 .placement_block__body{gap:14px}.placement_block__title{min-width:0;flex:1 1 auto}
 .announcing_subtitle{font-size:12px!important}
+/* 27.11: трансфер на страницах программ – цена «200 000 ₽/группа» не сжимается рядом с «Рекомендуем прибыть…» и не рвётся на 4 строки */
+.rbox_info{flex-wrap:wrap;gap:12px 24px}.rbox_info .rbox_info-txt{flex:1 1 220px;min-width:0}.rbox_info .rbox_head-txt{flex:0 0 auto}.rbox_ttl--price{white-space:nowrap}
+/* подписи карточек услуг не мельче 12 px */
+.announcing_subtitle{font-size:12px!important}
+/* 27.11: пустые страницы архива блога (нет записей) – подвал не поднимается под шапку */
+.header + .footer-section{margin-top:150px}@media (max-width:1024px){.header + .footer-section{margin-top:96px}}
