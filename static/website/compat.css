@@ -232,5 +232,5 @@ h1.rmain-slider_subtitle{max-width:none}
 /* 27.11: кнопка «Спланировать поездку» в узкой колонке формы (планшет) – переносится на 2 строки, не вылезает */
 .form_element.quarter .arrow_btn{max-width:100%;min-width:0}
 .form_element.quarter .arrow_btn span{min-width:0;flex:1 1 auto;line-height:1.3}
-/* 27.11: заголовки блоков на тёмном фоне главной были графитом по графиту – невидимы. Кремовые, как подзаголовки */
-.section-announcing .main_title h3,.section-programs .main_title h3{color:#ffecba}
+/* 27.11: заголовки (h1–h4 в .main_title) были графитом по графиту – невидимы на тёмных блоках («Анонсы», «Программы», «СПА», «Как добраться», «Ресторан»). Берут цвет своего блока, как задумано темой */
+.main_title h1,.main_title h2,.main_title h3,.main_title h4{color:inherit}
