@@ -254,3 +254,7 @@ footer .footer_left .b_phone{white-space:nowrap}
 .header + .footer-section{margin-top:150px}@media (max-width:1024px){.header + .footer-section{margin-top:96px}}
 /* 27.11: кнопка «Номера, ресторан и СПА» с главной ведёт сразу к этим блокам на «Лодже», а не к повтору «О нас» */
 #nomera-restoran-spa{scroll-margin-top:150px}@media (max-width:1024px){#nomera-restoran-spa{scroll-margin-top:96px}}
+/* 27.11: телефон не рвётся на строки (Xiaomi: «+7 (921)» / «085-46-55» на «Агентам», «085-» / «46-55» на «СПА») */
+.zl-nowrap,a[href^="tel:"]{white-space:nowrap}
+/* 27.11: заголовки страниц на телефоне – длинное слово («ПОМОРСКОЙ» на «Ресторане») не выходит за экран */
+@media (max-width:480px){.main_title h1{font-size:min(56px,11.5vw)!important;line-height:1.1!important}}
