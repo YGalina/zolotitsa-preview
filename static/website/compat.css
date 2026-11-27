@@ -237,3 +237,12 @@ h1.rmain-slider_subtitle{max-width:none}
 /* 27.11: телефон в подвале не рвать на две строки (планшет 1024: «085-46-» / «55») */
 footer .footer_left .b_phone{white-space:nowrap}
 @media (min-width:992px) and (max-width:1199px){footer .footer_left .b_phone{font-size:min(24px,2.05vw)}}
+/* 27.11: «О нас» – кремовый блок и заголовок уходили под прозрачную шапку (шапка 130 px, отступ темы 105 px), меню не читалось */
+@media (min-width:1025px){.section-about.first_screen_offset{padding-top:calc(14rem + 86px)}.section-about.first_screen_offset .wide_right_bg{top:calc(7rem + 86px)}}
+@media (min-width:601px) and (max-width:1024px){.section-about.first_screen_offset{padding-top:calc(14rem + 44px)}.section-about.first_screen_offset .wide_right_bg{top:calc(7rem + 44px)}}
+@media (max-width:600px){.section-about.first_screen_offset{padding-top:80px}.section-about.first_screen_offset .wide_right_bg{top:72px}}
+/* 27.11: подвал 601–991 px – «Политика конфиденциальности» заходила на «Разработка сайта» */
+@media (min-width:601px) and (max-width:991px){.footer_left .footer_copy{max-width:calc(50% - 40px)}}
+/* 27.11: карточки номеров – название вплотную к «Подробнее» («Джуниор сюит», «Двухкомнатный люкс») */
+.placement_block__body{gap:14px}.placement_block__title{min-width:0;flex:1 1 auto}
+.announcing_subtitle{font-size:12px!important}
