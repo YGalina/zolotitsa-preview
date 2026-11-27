@@ -229,3 +229,6 @@ h1.rmain-slider_subtitle{max-width:none}
 /* 27.11: «О нас» на главной – на компьютере синопсис (2 абзаца), на телефоне логлайн (1 фраза) */
 .zl-about-short{display:none}
 @media (max-width:767px){.zl-about-long{display:none}.zl-about-short{display:block}}
+/* 27.11: кнопка «Спланировать поездку» в узкой колонке формы (планшет) – переносится на 2 строки, не вылезает */
+.form_element.quarter .arrow_btn{max-width:100%;min-width:0}
+.form_element.quarter .arrow_btn span{min-width:0;flex:1 1 auto;line-height:1.3}
