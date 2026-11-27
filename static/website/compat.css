@@ -252,3 +252,5 @@ footer .footer_left .b_phone{white-space:nowrap}
 .announcing_subtitle{font-size:12px!important}
 /* 27.11: пустые страницы архива блога (нет записей) – подвал не поднимается под шапку */
 .header + .footer-section{margin-top:150px}@media (max-width:1024px){.header + .footer-section{margin-top:96px}}
+/* 27.11: кнопка «Номера, ресторан и СПА» с главной ведёт сразу к этим блокам на «Лодже», а не к повтору «О нас» */
+#nomera-restoran-spa{scroll-margin-top:150px}@media (max-width:1024px){#nomera-restoran-spa{scroll-margin-top:96px}}

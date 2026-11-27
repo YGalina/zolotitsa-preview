@@ -205,3 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   }
 });
+
+// 27.11: переход по якорю (кнопка «Номера, ресторан и СПА» с главной ведёт на «Лодж» к блокам номеров, ресторана и СПА).
+// Тема при загрузке сбрасывает прокрутку наверх, поэтому после загрузки докручиваем к блоку; отступ под шапку задаёт scroll-margin-top в compat.css.
+window.addEventListener('load', function () {
+  var id = decodeURIComponent((location.hash || '').slice(1));
+  if (!id || !/^[\w-]+$/.test(id)) return;
+  var el = document.getElementById(id);
+  if (!el) return;
+  setTimeout(function () { el.scrollIntoView({block: 'start'}); }, 350);
+});
