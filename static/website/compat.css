@@ -234,3 +234,6 @@ h1.rmain-slider_subtitle{max-width:none}
 .form_element.quarter .arrow_btn span{min-width:0;flex:1 1 auto;line-height:1.3}
 /* 27.11: заголовки (h1–h4 в .main_title) были графитом по графиту – невидимы на тёмных блоках («Анонсы», «Программы», «СПА», «Как добраться», «Ресторан»). Берут цвет своего блока, как задумано темой */
 .main_title h1,.main_title h2,.main_title h3,.main_title h4{color:inherit}
+/* 27.11: телефон в подвале не рвать на две строки (планшет 1024: «085-46-» / «55») */
+footer .footer_left .b_phone{white-space:nowrap}
+@media (min-width:992px) and (max-width:1199px){footer .footer_left .b_phone{font-size:min(24px,2.05vw)}}
