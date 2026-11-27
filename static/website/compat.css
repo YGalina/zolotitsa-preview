@@ -226,3 +226,6 @@ h1.rmain-slider_subtitle{max-width:none}
 /* планшет 768–1024: шапка услуг (ресторан, СПА) – текст не шире колонки, «ПОМОРСКОЙ» не вылезает */
 .service_head_sides .service_head_content{min-width:0}
 @media (min-width:768px) and (max-width:1024px){.service_head_content h1{font-size:min(56px,6.5vw)!important;line-height:1.1!important}}
+/* 27.11: «О нас» на главной – на компьютере синопсис (2 абзаца), на телефоне логлайн (1 фраза) */
+.zl-about-short{display:none}
+@media (max-width:767px){.zl-about-long{display:none}.zl-about-short{display:block}}
