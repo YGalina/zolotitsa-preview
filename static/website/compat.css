@@ -261,7 +261,17 @@ footer .footer_left .b_phone{white-space:nowrap}
 /* 27.11: заголовок программы на узком телефоне – «НОВОРОЖДЁННЫМ» выходил за экран на 360 px */
 @media (max-width:480px){h1.h1{font-size:min(32px,8vw)!important}}
 /* 27.11: телефоны – длинные слова в заголовках («окрестностям», «Этнографический») не выходят за экран; длинный адрес или слово в тексте переносится */
-@media (max-width:480px){.main_title h1{font-size:min(56px,10vw)!important;hyphens:auto;-webkit-hyphens:auto}h1.h1{font-size:min(32px,7.6vw)!important;hyphens:auto;-webkit-hyphens:auto}}
+/* 28.11: без автопереносов – Safari и Android рвали «ПО-МОРСКОЙ КУХ-НИ»; длинные слова помещаются за счёт размера шрифта */
+@media (max-width:480px){.main_title h1{font-size:min(56px,10vw)!important;hyphens:manual;-webkit-hyphens:manual}h1.h1{font-size:min(32px,7.6vw)!important;hyphens:manual;-webkit-hyphens:manual}}
 p,li{overflow-wrap:break-word}
 /* 27.11: карточки номеров – «Двухкомнатный» не помещалось рядом с «Подробнее» и налезало на кнопку; во всех карточках название сверху, кнопка под ним */
 .placement_block__body{flex-direction:column;align-items:flex-start;row-gap:12px}
+
+/* 28.11: Safari на iPhone и iPad увеличивает страницу, если поле ввода мельче 16 px (в формах было 9,8 px) */
+@media (max-width:1024px),(pointer:coarse){input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=hidden]),select,textarea{font-size:16px!important}}
+/* 28.11: название карточки не заходит на крупную цифру 01, 02 (на iPad «Рыбалка на море, реке и озёрах» шла поверх 02) */
+.announcing_block_head .announcing_title{display:block;padding-right:66px}
+/* 28.11: подпись под ценами программы и «Скидки» были светло-серыми (185,181,176 на белом) – плохо читались */
+.rprice-section .simple_text p{color:#5a6068}
+/* 28.11: заголовки дней на телефоне – длинное слово («МЛЕКОПИТАЮЩИМИ», «НОВОРОЖДЁННЫМИ») помещается целиком, без разрыва */
+@media (max-width:480px){.raccordion_ttl{font-size:clamp(16px,calc((100vw - 120px)/12.4),24px)!important}}
